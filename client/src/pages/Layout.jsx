@@ -15,7 +15,7 @@ const Layout = () => {
         <div className=''>
           <Navbar />
         </div>
-        <div className='bg-fuchsia-100' style={{
+        <div className='bg-[#061327]' style={{
           backgroundImage: `url(${image})`,
         }}
         >

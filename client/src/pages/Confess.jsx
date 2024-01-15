@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Snackbar from '@mui/material/Snackbar';
 import { Alert } from '@mui/material';
 
-const BASE_URL = 'https://confessions-website-5bvg.onrender.com';
+const BASE_URL = 'https://confession-website-api.onrender.com0';
 
 const Confess = () => {
   const [confession, setCon] = useState("");

@@ -2,22 +2,24 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import { UserContext } from '../UserContext.jsx';
 
-const BASE_URL = 'https://confessions-website-5bvg.onrender.com'
+const BASE_URL = 'https://confession-website-api.onrender.com'
 
 const Login = () => {
     const navigate = useNavigate();
     const { user, setUser } = useContext(UserContext);
     const [message, setMsg] = useState('');
-    if(user){
-        navigate('/dashboard');
-    }
+    
     const [formData, setFormData] = useState({
         name: "",
         email: "",
         password: ""
     });
     //if signed-in
-    useEffect(() => { }, []);
+    useEffect(() => {
+        if(user){
+            navigate('/dashboard');
+        }
+    }, []);
     async function loginUser(e) {
         e.preventDefault();
         setMsg('')

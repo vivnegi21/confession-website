@@ -2,17 +2,20 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../UserContext.jsx'
 import MessageCard from '../components/MessageCard.jsx';
-const BASE_URL = 'https://confessions-website-5bvg.onrender.com'
+const BASE_URL = 'https://confession-website-api.onrender.com'
 const Dashboard = () => {
   const { user } = useContext(UserContext);
   const navigate = useNavigate();
-  if (user===null) {
-    navigate('/')
-  }
+  
   const [messages, setMessages] = useState([]);
+  if (!user)  navigate('/')
   useEffect(() => {
     fetch(`${BASE_URL}/messages`,
-      { method: "GET", headers: { "Content-Type": "application/json" }, credentials: 'include' },)
+      {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+        credentials: 'include'
+      })
       .then((response) => response.json()).then(data => setMessages([...data]));
   }, [])
   return (

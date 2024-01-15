@@ -25,23 +25,18 @@ const addConfession = (req, res) => {
         })
     }
 };
-const getAllMessages = (req, res) => {
-    const { token } = req.cookies;
-    if (token) {
-        jwt.verify(token, process.env.SECRET || 'secret_key', {}, async (err, user) => {
-            if (err) {
-                throw err;
-            }
-            const mess = await Messages.find();
-            const result = mess.map((obj)=>{
-                return {
-                    message:obj.message,
-                    createdAt:obj.createdAt
-                }
-            })
-            res.status(201).send(result);
-        })
-    }
+const getAllMessages = async (req, res) => {
+
+    const mess = await Messages.find();
+    const result = mess.map((obj) => {
+        return {
+            message: obj.message,
+            createdAt: obj.createdAt
+        }
+    })
+    console.log(result);
+    res.status(201).send(result);
+
 }
 module.exports = {
     addConfession,

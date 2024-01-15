@@ -6,9 +6,7 @@ import { Alert, Snackbar } from '@mui/material';
 const Signup = () => {
     const navigate = useNavigate();
     const { user } = useContext(UserContext);
-    if (user) {
-        navigate('/dashboard')
-    }
+    
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -23,7 +21,11 @@ const Signup = () => {
     }
 
     //if signed-in
-    useEffect(() => { }, []);
+    useEffect(() => {
+        if (user) {
+            navigate('/dashboard')
+        }
+    }, []);
     const [message, setMessage] = useState('');
     function signUser(e) {
         e.preventDefault();
@@ -32,7 +34,7 @@ const Signup = () => {
 
         } else {
             setMessage('');
-            fetch('https://confessions-website-5bvg.onrender.com/signup', {
+            fetch('https://confession-website-api.onrender.com/signup', {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json"

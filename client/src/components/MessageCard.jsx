@@ -4,9 +4,9 @@ import { FaRegUserCircle } from "react-icons/fa";
 const MessageCard = ({ message }) => {
   const [show, setShow] = useState(false);
   return (
-    <div className=' flex flex-col card1 hover:text-white px-3 py-2 w-11/12 mx-auto justify-between gap-2 font-sans min-h-fit border bg-white/70 rounded-lg '>
+    <div className=' flex flex-col card1  px-3 py-2 w-11/12 hover:text-black  mx-auto justify-between gap-2 font-sans min-h-fit border bg-[#F5CCC0] rounded-lg '>
       <div className='flex gap-2 items-center'>
-      <FaRegUserCircle className='text-gray-500' />
+      <FaRegUserCircle className='text-gray-500 hover:text-black' />
       <p className='text-gray-500'>Anonymous User</p>
       </div>
       <h2 className=''>
