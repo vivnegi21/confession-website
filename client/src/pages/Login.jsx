@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import { UserContext } from '../UserContext.jsx';
+import { Alert, Snackbar } from '@mui/material';
 
 const BASE_URL = 'https://confession-website-api.onrender.com'
 
@@ -46,6 +47,10 @@ const Login = () => {
             return { ...data, [e.target.name]: e.target.value };
         });
     }
+    const [open, setOpen] = useState(false);
+    function handleClose(){
+        setOpen(false);
+    }
     return (
         <div className='bg-no-repeat bg-auto bg-bottom blur-none' style={{
             backgroundImage: "url('https://images.unsplash.com/photo-1621091211034-53136cc1eb32?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
@@ -78,6 +83,11 @@ const Login = () => {
 
 
             </div>
+            <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+                    <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+                        User Signed in, Ready to confess!
+                    </Alert>
+                </Snackbar>
         </div>
     )
 }
