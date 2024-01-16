@@ -27,14 +27,17 @@ const addConfession = (req, res) => {
 };
 const getAllMessages = async (req, res) => {
 
-    const mess = await Messages.find();
+    const mess = await Messages.find().sort({
+        createdAt:
+            -1
+    });
     const result = mess.map((obj) => {
         return {
             message: obj.message,
             createdAt: obj.createdAt
         }
     })
-    
+
     res.status(201).send(result);
 
 }

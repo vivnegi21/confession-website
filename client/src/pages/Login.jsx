@@ -9,7 +9,7 @@ const Login = () => {
     const navigate = useNavigate();
     const { user, setUser } = useContext(UserContext);
     const [message, setMsg] = useState('');
-    
+
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -18,7 +18,7 @@ const Login = () => {
     //if signed-in
     useEffect(() => {
         document.title = 'Login';
-        if(user){
+        if (user) {
             navigate('/dashboard');
         }
     }, [user]);
@@ -34,8 +34,8 @@ const Login = () => {
                 body: JSON.stringify(formData),
                 credentials: 'include'
             }).then(res => res.json());
-            if(!userDoc.ok) setMsg('Invalid Credentials');
-            else{
+            if (!userDoc.ok) setMsg('Invalid Credentials');
+            else {
                 setUser(userDoc);
                 navigate('/dashboard')
             }
@@ -49,7 +49,7 @@ const Login = () => {
         });
     }
     const [open, setOpen] = useState(false);
-    function handleClose(){
+    function handleClose() {
         setOpen(false);
     }
     return (
@@ -85,10 +85,10 @@ const Login = () => {
 
             </div>
             <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-                    <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
-                        User Signed in, Ready to confess!
-                    </Alert>
-                </Snackbar>
+                <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+                    User Signed in, Ready to confess!
+                </Alert>
+            </Snackbar>
         </div>
     )
 }
