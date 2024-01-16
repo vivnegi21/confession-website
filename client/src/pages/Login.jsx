@@ -37,7 +37,10 @@ const Login = () => {
             if (!userDoc.ok) setMsg('Invalid Credentials');
             else {
                 setUser(userDoc);
-                navigate('/dashboard')
+                setOpen(true);
+                setTimeout(()=>{
+                    navigate('/dashboard')
+                },2000);
             }
         }
 
