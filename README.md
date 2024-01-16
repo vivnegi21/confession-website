@@ -31,4 +31,4 @@ Confession's World is a unique platform designed for individuals to share their 
 7. run "npm run start" on client and "npm ./index.js" on another.
 
    ** OR **
-1. Visit: [Site Link: ](https://airbnb-clone-vivnegi21.vercel.app/)
+1. Visit: [Site Link: ](https://confession-website-flax.vercel.app/)
