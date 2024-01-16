@@ -57,6 +57,8 @@ const getUser = (req,res)=>{
             const { name } = await User.findById(user.id);
             res.json({...user,name});
         })
+    }else{
+        res.json(null)
     }
 }
 module.exports = {

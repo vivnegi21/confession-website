@@ -13,22 +13,20 @@ import Layout from './pages/Layout.jsx';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <UserContextProvider>
     <BrowserRouter>
-      <UserContextProvider>
-        <Routes>
-          <Route path="/" element={<App />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/signup' element={<Signup />} />
-          <Route path='/dashboard' element={<Layout />}>
-            <Route index element={<Dashboard/>} />
-            <Route path='/dashboard/confess' element={<Confess />} />
-          </Route>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/signup' element={<Signup />} />
+        <Route path='/dashboard' element={<Layout />}>
+          <Route index element={<Dashboard />} />
+          <Route path='/dashboard/confess' element={<Confess />} />
+        </Route>
 
-        </Routes>
-      </UserContextProvider>
+      </Routes>
     </BrowserRouter>
-  </React.StrictMode>
+  </UserContextProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
