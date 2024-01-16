@@ -8,7 +8,7 @@ const messageSchema = new mongoose.Schema({
     },
     createdAt:{
         type:Date,
-        default:new Date.now()
+        default:Date.now(),
     }
 })
 
