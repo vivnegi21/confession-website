@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from 'react';
 
 export const UserContext = createContext({});
-const BASE_URL = 'http://localhost:4000'
+const BASE_URL = 'https://confession-website-api.onrender.com'
 
 export function UserContextProvider({ children }) {
     const [user, setUser] = useState(null);
