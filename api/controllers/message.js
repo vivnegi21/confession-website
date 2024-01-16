@@ -19,6 +19,7 @@ const addConfession = (req, res) => {
             const mess = await Messages.create({
                 message: confession,
                 user: user.id,
+                createdAt: new Date(),
             })
             res.status(201).send(mess);
 
