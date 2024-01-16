@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React from 'react'
 import { FaUserTie } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
 import { TfiWrite } from "react-icons/tfi";

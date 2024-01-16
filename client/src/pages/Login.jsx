@@ -20,7 +20,7 @@ const Login = () => {
         if(user){
             navigate('/dashboard');
         }
-    }, []);
+    }, [user]);
     async function loginUser(e) {
         e.preventDefault();
         setMsg('')

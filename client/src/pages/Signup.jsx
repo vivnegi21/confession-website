@@ -25,7 +25,7 @@ const Signup = () => {
         if (user) {
             navigate('/dashboard')
         }
-    }, []);
+    }, [user]);
     const [message, setMessage] = useState('');
     function signUser(e) {
         e.preventDefault();
