@@ -1,9 +1,12 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
+
 import { Outlet, useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar'
 import { UserContext } from '../UserContext.jsx'
 const BASE_URL = 'https://confessions-website-5bvg.onrender.com'
-
+import { FaUserTie } from "react-icons/fa6";
+import { UserContext } from '../UserContext';
+import {useNavigate } from 'react-router-dom';
 
 const Layout = () => {
   const { user, setUser } = useContext(UserContext);
