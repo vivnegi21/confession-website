@@ -17,7 +17,7 @@ const Confess = () => {
     if (confession === '') {
       setMessage({
         alert: 'info',
-        msg: 'Empty Message',
+        info: 'Empty Message',
       })
       setOpen(true);
     } else {
@@ -32,7 +32,12 @@ const Confess = () => {
         credentials: 'include'
       }).then(res => {
         res.json();
+        setMessage({
+          alert: 'success',
+          msg: "Anonymous Message Uploaded"
+        })
         setOpen(true);
+
         setTimeout(() => {
           navigate('/dashboard');
         }, 2000);
