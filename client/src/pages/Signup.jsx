@@ -22,6 +22,8 @@ const Signup = () => {
 
     //if signed-in
     useEffect(() => {
+        document.title = 'Sign Up';
+
         if (user) {
             navigate('/dashboard')
         }

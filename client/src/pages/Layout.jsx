@@ -25,7 +25,7 @@ const Layout = () => {
     <div className='w-full flex flex-col'>
       <div className=''>
         <Navbar show={show} setShow={setShow} />
-        <div className={` z-50 sm:w-96 h-96 border absolute rounded-xl bg-white top-0 right-0 mt-14  ${show ? '' : 'hidden'} `}>
+        <div className={` z-50 sm:w-96 h-96 border absolute rounded-xl bg-white/45 backdrop-blur-sm top-0 right-0 mt-14  ${show ? '' : 'hidden'} `}>
           <div className=' flex flex-col items-center p-4 text-black text-2xl gap-5 z-50'>
             <FaUserTie className='w-40 h-40 rounded-full border-black border-8 text-black z-50' />
             <div className='flex flex-col items-center gap-2 z-50'>

@@ -17,6 +17,7 @@ const Login = () => {
     });
     //if signed-in
     useEffect(() => {
+        document.title = 'Login';
         if(user){
             navigate('/dashboard');
         }

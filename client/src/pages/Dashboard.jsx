@@ -10,6 +10,7 @@ const Dashboard = () => {
   const [messages, setMessages] = useState([]);
   if (!user)  navigate('/')
   useEffect(() => {
+    document.title='Dashboard';
     fetch(`${BASE_URL}/messages`,
       {
         method: "GET",

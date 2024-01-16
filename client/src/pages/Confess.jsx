@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import Snackbar from '@mui/material/Snackbar';
 import { Alert } from '@mui/material';
@@ -33,6 +33,9 @@ const Confess = () => {
   function handleClose() {
     setOpen(false);
   }
+  useEffect(()=>{
+    document.title='Confess Your Feelings'
+  },[])
   return (
     <div className='flex z-10'>
       <div className='w-full flex justify-center max-w-lg my-16 sm:mx-auto mx-2   '>

@@ -1,6 +1,10 @@
+import { useEffect } from 'react';
 import './App.css';
 import {Link} from 'react-router-dom'
 function App() {
+  useEffect(()=>{
+    document.title="Confession's world";
+  },[])
   return (
     <div className="">
       <nav className="w-full flex justify-between px-4 py-4 z-10 border-b border-blue-500 fixed top-0 left-0 bg-blue-700/90 text-white ">
