@@ -34,7 +34,7 @@ const getAllMessages = async (req, res) => {
             createdAt: obj.createdAt
         }
     })
-    console.log(result);
+    
     res.status(201).send(result);
 
 }
