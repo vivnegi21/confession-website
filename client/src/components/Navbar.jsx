@@ -7,7 +7,7 @@ const Navbar = ({ show, setShow }) => {
 
   return (
     <nav className="w-full flex justify-between px-4 py-4  border-b-2 border-gray-400  bg-[#101214] backdrop-blur z-50 text-white  ">
-      <Link to={'/'} className='italic font-bold text-white md:text-3xl text-nowrap items-center '>
+      <Link to={'/dashboard'} className='italic font-bold text-white md:text-3xl text-nowrap items-center '>
         Confession's <span className=''>World</span>
       </Link>
       <div className='flex gap-4 items-center px-4'>
