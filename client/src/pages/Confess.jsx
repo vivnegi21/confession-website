@@ -10,7 +10,7 @@ const Confess = () => {
   const navigate = useNavigate();
   const [msg, setMessage] = useState({
     alert: 'success',
-    msg: "Anonymous Message Uploaded"
+    info: "Anonymous Message Uploaded"
   })
   function handleSubmit(e) {
     e.preventDefault();
@@ -34,7 +34,7 @@ const Confess = () => {
         res.json();
         setMessage({
           alert: 'success',
-          msg: "Anonymous Message Uploaded"
+          info: "Anonymous Message Uploaded"
         })
         setOpen(true);
 
